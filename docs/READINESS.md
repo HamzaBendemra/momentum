@@ -6,10 +6,10 @@
 
 - Version: `0.1.0-beta.1`; public workspace schema 1.
 - Preparation started from `16b7831836fbc44a9dd9667dc0f662feaa3673f5`.
-- Browser candidate commit: `c05ceafe24ca7171382993aa6fdbfa4705b956a5`. The production preview was built from this application code. Subsequent evidence-only documentation commits do not change that browser candidate.
-- Current work changes preview disclosures, documentation, rejection fixtures and dependency notices. No runtime dependencies, storage schema or application API changes are planned.
+- Browser candidate commit: `37e7417d26a31ff89e91f42c3778a344b7307906` (light navy palette). The production preview has been rebuilt from this application code. Subsequent evidence-only documentation commits do not change that browser candidate.
+- This candidate replaces purple presentation with a light navy palette, updates favicon/install icons and browser theme colours, and retains version `0.1.0-beta.1`. No runtime dependencies, storage schema, application APIs or workspace records changed.
 
-Review date: 27 September 2026. The evidence below applies to the browser candidate and its five-commit history; later documentation-only evidence updates do not change the tested app.
+Review date: 27 September 2026. The original full audit below applies to `c05ceafe24ca7171382993aa6fdbfa4705b956a5` and its five-commit history. The navy candidate has the incremental review recorded below; original clean-clone and CI evidence is not represented as a new-candidate run.
 
 ## Gate evidence
 
@@ -19,7 +19,7 @@ Review date: 27 September 2026. The evidence below applies to the browser candid
 | MIT and dependency notices | Passed after correction | Retained the exact license texts for all seven production packages and verified notices/LICENSE are copied into the build |
 | Clean-clone automated suite and packaging | Passed | Node 22.22.2; npm ci, npm run check, npm run skills:build and release:check; 26 tests pass, including all three on-disk rejection files. npm reported zero known vulnerabilities |
 | Draft asset hashes | Passed | All four ZIPs match the source allowlist; five uploaded asset hashes match the reviewed local files. Draft notes match the checked-in text |
-| Candidate GitHub CI | Passed | [Run 36300574763](https://github.com/HamzaBendemra/momentum/actions/runs/36300574763); quality passed, deployment skipped |
+| Original candidate GitHub CI | Passed for c05ceaf; navy candidate pending CI | [Run 36300574763](https://github.com/HamzaBendemra/momentum/actions/runs/36300574763); quality passed, deployment skipped |
 | Core Chrome acceptance | NOT RUN | All eight rows in PREVIEW_CHECK.md are pending; maintainer-reported results accepted |
 | Publication / hosted smoke check | NOT RUN | Repository private, ENABLE_PAGES=false; no live-site claim |
 
@@ -34,6 +34,16 @@ Review date: 27 September 2026. The evidence below applies to the browser candid
 - The two PNG icons and SVG contain only the original Momentum mark. PNG chunks are IHDR/IDAT/IEND with no textual or EXIF metadata. No screenshots or recordings are included. All dependency resolutions use registry.npmjs.org; the lockfile's install scripts belong to esbuild and fsevents.
 
 These checks reduce publication risk; finite scans and manual review are not a guarantee of secret detection or a security certification. Recheck any new commits and assets before publication.
+
+## Navy candidate verification
+
+- Reviewed the incremental source diff: shared CSS colour variables, HTML/manifest theme colours, and the same SVG mark rasterized at 192 and 512 pixels. White surfaces, typography, layout and warm error styling are retained. No skill, method, evaluation or draft-release archive bytes changed.
+- `npm run check` passed locally on Node 22.22.2: lint, TypeScript, all 26 tests, production build, skill validation and release-content checks. No new dependencies or data migrations.
+- Calculated contrast: white on navy 11.25:1; white on hover 14.23:1; slate text on pale blue 5.46:1; ink on pale blue 12.62:1; focus blue on pale blue 4.90:1. Functional control borders use a darker slate than decorative borders and reach 3.34:1 against pale blue. These are palette calculations, not a browser accessibility audit.
+- Source and built CSS/HTML/manifest/SVG inspected for previous purple literals: none remain. Both PNGs were regenerated from the unchanged SVG geometry; the 512-pixel icon was visually inspected. Generated metadata was stripped; only IHDR, IDAT and IEND chunks remain.
+- New production cache: `momentum-public:/momentum/:2167653d73362e0b`; 10 assets. The existing build generator and `/momentum/` scope/cleanup rules are unchanged.
+- Visual browser checks of all surfaces, hover/focus and narrow layouts remain blocked by the saved browser permission restriction. All eight core acceptance checks remain NOT RUN. Do not treat this palette change or the automated suite as satisfying those checks.
+- The repository remains private, Pages disabled, and the existing beta release draft. The earlier audit and draft asset hashes remain historical evidence; recheck the complete publication candidate before changing visibility.
 
 ## Draft asset SHA-256 record
 
