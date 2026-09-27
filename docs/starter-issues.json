@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Onboarding: add three optional examples of observable daily outcomes",
+    "area": "onboarding",
+    "body": "Add a compact, optional examples disclosure beside the first-use outcome field. Use three fictional domains (writing, research, community work). Each example should name an observable finish and one explicit exclusion. Do not prefill or save example records.\n\nAcceptance: keyboard-accessible disclosure, concise copy on 390px and desktop layouts, and no change to empty-workspace or rest-day behaviour. Validate locally; no browser CI."
+  },
+  {
+    "title": "Accessibility: audit the four surfaces with a screen reader",
+    "area": "accessibility",
+    "body": "Run the complete fictional campaign \u2192 outcome \u2192 proof \u2192 review journey using VoiceOver or NVDA. Record host/browser versions and specific barriers in a checked-in accessibility note. Fix one bounded label, heading or announcement problem identified by the audit.\n\nAcceptance: reproducible before/after behaviour, relevant local keyboard checks, and no private records or screenshots. Keep any broader findings as separate proposed work."
+  },
+  {
+    "title": "Docs: add a fictional backup-transfer and recovery walkthrough",
+    "area": "documentation",
+    "body": "Expand docs/PRIVACY.md with a short companion tutorial covering download, transfer to another browser, preview, replacement, and recovery-copy restoration. Use only an invented workspace. Explain that development, preview and hosted origins have separate storage.\n\nAcceptance: another contributor can follow the instructions without credentials; screenshots, if used, contain fictional records; context Markdown is clearly distinguished from a full backup."
+  },
+  {
+    "title": "Examples: add a small creative-project plan with uncertain impact",
+    "area": "examples",
+    "body": "Add one portable Markdown example for a creative project such as a short essay or community exhibition. Include purpose, dated milestone, constrained daily outcome, dated evidence and one weekly decision. Include an unsupported impact claim for narrative evaluation.\n\nAcceptance: explicitly fictional, no importable completed records, no fabricated third-party endorsement, and a short expected-behaviour note for each skill."
+  },
+  {
+    "title": "Skills: extend the evaluation set with changing constraints across dates",
+    "area": "skills",
+    "body": "Add raw input fixtures and a separate behaviour rubric for a deadline that moves, a dependency that later resolves, and evidence that corrects an earlier note. Keep expected answers out of host inputs. Run the cases on one documented host version if available; clearly label unrun cases.\n\nAcceptance: source attribution and unresolved claims can be assessed without matching exact wording; no storage writes or external communication; sanitized results only."
+  },
+  {
+    "title": "Docs: verify installation guidance in Firefox and Safari",
+    "area": "documentation",
+    "body": "Use current Firefox and Safari versions to check the production app path, offline behaviour after the cache completes, and the available installation or home-screen flow. Update the compatibility table with concrete observations and limits; do not claim unsupported installation modes.\n\nAcceptance: versions, operating system, tested URLs and local results recorded; any bug has a synthetic reproduction. No browser checks added to CI."
+  }
+]
