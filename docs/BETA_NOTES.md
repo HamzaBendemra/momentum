@@ -1,25 +1,38 @@
-# Momentum 0.1.0-beta.1 — draft beta release
+# Momentum 0.1.0-beta.1
 
-Turn a goal into today's outcome—and a record of what changed.
+Turn a goal into today’s outcome—and a record of what changed.
 
-Momentum is available as a **public early preview**: a local React application and three self-contained agent skills sharing one method. Source and [hosting](https://bendemra.ai/momentum/) passed the preview gates; this formal beta release and its packaged downloads remain unpublished until the broader beta checks are complete.
+The first public beta pairs a local browser application with three portable agent skills. [Try the app](https://bendemra.ai/momentum/#/focus), [explore the fictional demo](https://bendemra.ai/momentum/#/demo/focus), or [install the skills](https://github.com/HamzaBendemra/momentum/blob/main/docs/SKILLS.md).
 
 ## Included
 
-- Focus: editable campaigns/milestones, one Now / three Next, daily outcomes, small tasks, rollover and easy closure.
-- Proof: dated evidence and narrative export. Review: a next decision and reflection history.
-- Settings & Data: timezone/workdays/horizon, validated public v1 backups with transactional recovery, selected Markdown context and an isolated fictional demo.
-- Three skills: choose an outcome, review the week and build a sourced narrative. Each carries its method reference and MIT license.
-- Contributor guidance, two fictional plans, six starter issues, Discussions and quality-gated Pages deployment.
+- **Focus:** editable campaigns and milestones, one Now / three Next, daily outcomes, small tasks, rollover and easy closure.
+- **Proof and Review:** dated evidence, accomplishment narratives, weekly decisions and reflection history.
+- **Settings & Data:** workdays/timezone, full backups with transactional recovery, selected Markdown context and an isolated fictional demo.
+- **Three skills:** choose an outcome, review the week and build a sourced narrative. Each includes the canonical method reference and MIT license.
+- A light navy interface, fictional examples, six starter issues, Discussions and contributor guidance.
 
-## Verification
+## Downloads
 
-Consult the [readiness record](https://github.com/HamzaBendemra/momentum/blob/main/docs/READINESS.md) and [compatibility record](https://github.com/HamzaBendemra/momentum/blob/main/docs/COMPATIBILITY.md) for the candidate commit and actual checks. Automated coverage is not a browser pass. The eight core local browser checks passed according to the maintainer; hosted navigation and refresh were checked by the agent. The full browser matrix and walkthrough remain formal beta work.
+`momentum-skills.zip` contains all three skills. The individual ZIPs contain one skill each. Compare downloaded files with `SHA256SUMS`, extract them, then copy the named skill folders into your project’s `.agents/skills/` directory for Codex. Keep each skill’s references and license intact. See the installation guide for the archive layout and other hosts.
 
-All three skills were installed and evaluated in Codex CLI 0.149.0. Claude Code, ChatGPT and Cowork are unverified. No broad browser, offline, installation, external-feedback or testimonial claim is made.
+## Verified
 
-## Skills and data
+- Clean installation, lint, TypeScript, all 26 tests, production build, skill packaging and release-content checks.
+- All eight core local browser acceptance checks passed according to the maintainer, using the navy build in a fresh Chrome profile. These are maintainer-reported, not agent-observed.
+- Hosted HTTPS assets, landing/app/demo/skills navigation and Focus/demo refresh were checked by the agent.
+- All three skills were installed and evaluated in Codex CLI 0.149.0. Skills and method are unchanged from those evaluations.
 
-Install the early-preview skills from repository folders using [the instructions](https://github.com/HamzaBendemra/momentum/blob/main/docs/SKILLS.md). This draft holds the combined and individual ZIPs plus SHA256SUMS for future publication; they are not public download links yet.
+See the [readiness record](https://github.com/HamzaBendemra/momentum/blob/main/docs/READINESS.md) and [compatibility record](https://github.com/HamzaBendemra/momentum/blob/main/docs/COMPATIBILITY.md) for provenance and limits.
 
-Application data stays in the browser. Full backups enable recovery or transfer; Markdown context is not a restorable backup. Private predecessor backups are unsupported. Original code, method, documentation and skills are MIT licensed, with dependency notices retained.
+## Known limitations and next work
+
+This is a prerelease. The maintainer chose to release beta.1 with the broader desktop/mobile/accessibility, failure-state, installation and offline browser matrix still incomplete. The fictional walkthrough is also pending. No passing result is implied for those checks.
+
+Claude Code, ChatGPT and Cowork remain unverified. Landing/skills may retain the previous workspace browser-tab title after navigation; the page content and routes load correctly. External feedback is still to be gathered; no testimonials or usage results are claimed.
+
+## Your data and contributions
+
+Data stays in this browser and origin. Keep full backups outside the browser for recovery or transfer; Markdown context is not a restorable backup. There are no accounts, backend, cloud sync, embedded AI calls or automatic telemetry. Private predecessor backups are unsupported.
+
+Original code, method, documentation and skills are MIT licensed, with dependency notices retained. Start with a [good first issue](https://github.com/HamzaBendemra/momentum/labels/good%20first%20issue), ask a question in [Discussions](https://github.com/HamzaBendemra/momentum/discussions), and use synthetic reproductions. Report security issues through private vulnerability reporting.

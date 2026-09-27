@@ -18,7 +18,7 @@ These URLs are intended publication destinations; do not announce availability u
 
 ## 75-second walkthrough script
 
-Use the fictional urban-tree project throughout. Show the actual production build. Never display real records, browser history, credentials or another application. Use captions so the recording works muted. The recording remains pending and belongs to the formal beta launch; the early preview is already public. This script is not a claim that a video already exists.
+Use the fictional urban-tree project throughout. Show the actual production build. Never display real records, browser history, credentials or another application. Use captions so the recording works muted. The recording remains pending follow-up work; beta.1 is being released without claiming a walkthrough exists. This script is not a claim that a video already exists.
 
 | Time | Show | Caption / narration |
 | --- | --- | --- |

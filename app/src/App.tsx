@@ -27,7 +27,7 @@ function Landing({ skills = false }: { skills?: boolean }) {
         </div>
       </nav>
       <p className="notice">
-        <strong>Early preview</strong> · Browser coverage is still limited.
+        <strong>Beta</strong> · Browser coverage is still limited.
         Keep backups and see the{" "}
         <a href={`${github}/blob/main/docs/COMPATIBILITY.md`}>
           verification record
@@ -176,15 +176,15 @@ function Landing({ skills = false }: { skills?: boolean }) {
           </a>
           <a
             className="button"
-            href={`${github}/tree/main/skills`}
+            href={`${github}/releases/tag/v${__APP_VERSION__}`}
           >
-            Browse skill folders
+            Download skills
           </a>
         </div>
         <p className="subtle">
           Tested in Codex CLI 0.149.0. Claude Code, ChatGPT and Cowork remain
-          unverified. Install from the repository folders; packaged beta
-          downloads are not published yet.
+          unverified. Install from the repository folders or the beta downloads.
+          Keep each skill’s references and license intact.
         </p>
       </section>
       <section className="card contribute">
@@ -209,7 +209,7 @@ function Landing({ skills = false }: { skills?: boolean }) {
         </div>
       </section>
       <footer>
-        <span>Momentum {__APP_VERSION__} · Early preview · MIT · English first</span>
+        <span>Momentum {__APP_VERSION__} · Beta · MIT · English first</span>
         <span>Local data · No account · No telemetry</span>
         <a href={`${github}/blob/main/docs/PRIVACY.md`}>Privacy & recovery</a>
       </footer>
@@ -356,7 +356,7 @@ function WorkspaceApp({
           <small>
             {offlineReady ? "Offline ready" : "Browser storage · local only"}
           </small>
-          <small>Early preview · {__APP_VERSION__}</small>
+          <small>Beta · {__APP_VERSION__}</small>
         </div>
       </aside>
       <main id="main" className="app-stage" tabIndex={-1}>

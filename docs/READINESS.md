@@ -1,6 +1,6 @@
 # Early-preview readiness
 
-**Public early preview published on 27 September 2026.** Eight core browser checks passed according to the maintainer; the agent observed the separate hosted smoke check passing. The formal beta release remains draft.
+**Public early preview published on 27 September 2026.** Eight core browser checks passed according to the maintainer; the agent observed the separate hosted smoke check passing. The maintainer subsequently authorized beta.1 publication with remaining coverage explicitly disclosed; see the beta decision below.
 
 ## Candidate
 
@@ -80,3 +80,11 @@ Provenance: maintainer-reported on 27 September 2026, eight passes and no failur
 Full browser and physical-device coverage; keyboard/screen-reader checks; date transitions and storage-failure UI; installation/offline/cache isolation; fictional walkthrough, captions and screenshots; external feedback where available. Claude Code, ChatGPT and Cowork stay unverified. Existing Codex evaluations remain applicable while the skills and method are unchanged.
 
 No invitations, social posts or testimonials are included. MyVault, the personal website, DNS and account domain settings are outside this work.
+
+## Beta.1 release decision and candidate
+
+On 27 September 2026 the maintainer explicitly requested publishing the beta after the public early preview. The broader browser/offline/install/accessibility matrix and fictional walkthrough are carried forward as unverified follow-up work, not silently counted as passes.
+
+The beta candidate changes release labels, download links and documentation only; workspace behaviour, schemas, dependencies, canonical method and skill sources are unchanged. Existing core browser and Codex evaluation evidence remains applicable. The release is a prerelease with four skill archives and SHA256SUMS; no walkthrough or testimonial is included. The exact candidate commit is the commit referenced by tag `v0.1.0-beta.1`, recorded by GitHub when the draft is published after CI. Earlier draft/publication statements above describe those historical stages.
+
+Beta candidate validation on 27 September 2026: npm run check passed (lint, TypeScript, 26 tests, build, skill validation and release-content scan). Each of the four retained ZIPs was reopened and compared byte-for-byte against its exact source allowlist; SHA256SUMS and all five remote draft digests match. The hashes recorded above are unchanged. All 28 local Markdown links/anchors pass. The generated cache is `momentum-public:/momentum/:5468a57cd4a43d5c`, still covering ten project-scoped assets. Publication requires CI success for the exact release commit.

@@ -1,4 +1,4 @@
-# Use the skills — early preview
+# Use the skills
 
 The app is optional. Start from your notes, either [fictional example](../examples/field-guide.md), or Settings & Data → Preview selected context → Download selected context.
 
@@ -36,7 +36,11 @@ Start Claude Code in that project and use `/momentum-choose-outcome`, `/momentum
 
 ## Release downloads
 
-Packaged beta downloads are not published yet. For this early preview, install from the repository folders as described above. You can also build `momentum-skills.zip`, one ZIP per skill and `SHA256SUMS` locally with `npm run skills:build`. Keep every skill folder intact, including its `references` and `LICENSE`.
+Download [all three skills](https://github.com/HamzaBendemra/momentum/releases/download/v0.1.0-beta.1/momentum-skills.zip), or choose an individual ZIP from the [beta release](https://github.com/HamzaBendemra/momentum/releases/tag/v0.1.0-beta.1). Compare the archive’s SHA-256 with the release’s `SHA256SUMS` before extracting.
+
+The combined archive contains a `momentum-skills/` directory holding the three skill folders. Copy those inner folders into your project’s `.agents/skills/` (Codex) or `.claude/skills/` (Claude Code, unverified). Each individual archive contains its named skill folder; copy that folder to the same host directory. Keep every folder intact, including `references` and `LICENSE`.
+
+Repository installation remains available as described above. You can build the four ZIPs and `SHA256SUMS` locally with `npm run skills:build`.
 
 ## ChatGPT and Cowork: portable material, unverified integration
 

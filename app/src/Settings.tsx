@@ -262,7 +262,7 @@ export default function Settings({
         <p>
           The app prepares an offline cache after the first load. Offline use
           and installation are still awaiting full browser verification in this
-          early preview. Keep complete backups; installation does not replace
+          beta. Keep complete backups; installation does not replace
           them.
         </p>
         <button

@@ -1,6 +1,6 @@
 # Compatibility and verification
 
-Early-preview candidate `0.1.0-beta.1`. **Public early preview:** all eight guided local browser checks are maintainer-reported passes; final publication CI and agent-observed hosted navigation/refresh checks passed. Privacy review, automated quality and core browser acceptance are the preview gates; the full browser matrix and walkthrough are later beta gates. The formal GitHub release remains draft. See [READINESS.md](READINESS.md) for the reviewed commit and current evidence.
+Beta `0.1.0-beta.1`. **Public prerelease:** all eight guided local browser checks are maintainer-reported passes; final publication CI and agent-observed hosted navigation/refresh checks passed. Privacy review, automated quality and core browser acceptance are the preview gates; the full browser matrix and walkthrough remain follow-up work under the maintainer’s beta.1 release decision. See [READINESS.md](READINESS.md) for the reviewed commit and current evidence.
 
 | Surface | Status | Evidence / limits |
 | --- | --- | --- |
@@ -20,7 +20,7 @@ Early-preview candidate `0.1.0-beta.1`. **Public early preview:** all eight guid
 | External testers | Not yet recruited | Target about five willing testers; no invitations, testimonials or usage results |
 | Walkthrough recording | Script prepared; recording pending | Browser verification must precede recording; see LAUNCH.md |
 | Public repository and Pages | Published early preview | [Hosted app](https://bendemra.ai/momentum/); HTTPS assets match reviewed build; agent-observed landing/app/demo/skills navigation and Focus/demo refresh passed on 27 September 2026 |
-| Formal beta release | Draft | Packaged downloads remain unpublished; full beta matrix and walkthrough pending |
+| Beta release | Published prerelease | Version 0.1.0-beta.1; combined and individual skill ZIPs with checksums. Full browser matrix and walkthrough remain pending |
 
 ## Codex behaviour evaluation
 
@@ -34,7 +34,7 @@ The earlier smoke run used acceptance descriptions and is not counted as indepen
 
 For early-preview publication: the privacy/asset recheck, clean-clone checks and eight maintainer-reported passes are recorded in [PREVIEW_CHECK.md](PREVIEW_CHECK.md) and READINESS.md. Final CI and the separate hosted smoke check passed before restoring hosted README links. Local maintainer-run checks remain distinct from agent-observed hosted checks.
 
-For the formal beta: finish the full TESTING.md browser matrix and the fictional walkthrough/captions, then review final release content. Safari, Firefox, physical-device, installation and offline claims require their own evidence. Claude Code, ChatGPT and Cowork remain unverified and are not release gates.
+Follow-up work: finish the full TESTING.md browser matrix and the fictional walkthrough/captions. Review any new release content before publishing it. Safari, Firefox, physical-device, installation and offline claims require their own evidence. Claude Code, ChatGPT and Cowork remain unverified and are not release gates.
 
 External feedback is a learning target and cannot be invented. Social posts and tester invitations are separate actions. Native plugins, marketplaces, MCP and automatic write-back are deferred.
 

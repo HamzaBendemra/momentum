@@ -1,34 +1,24 @@
-# Early preview and beta release procedure
+# Release procedure
 
-Version: `0.1.0-beta.1`. The early preview opens the source and hosted app after privacy, automated quality and core browser checks pass. The formal GitHub beta release stays in draft. The public core becomes the source of truth; integrating changes into the private predecessor is separate work.
+Current release: **0.1.0-beta.1**, a public prerelease. The [hosted app](https://bendemra.ai/momentum/) uses `/momentum/`, hash routes and project-scoped service-worker caches. No DNS, personal-site repository or account-wide domain changes are needed.
 
-**Early preview published on 27 September 2026:** [Momentum](https://bendemra.ai/momentum/). The address is inherited from the account's existing GitHub Pages custom domain. Link directly to HTTPS. Do not change DNS, the personal-site repository or account-wide domain settings.
+## Beta.1 release decision
 
-## Early-preview publication gates
+On 27 September 2026, after the early preview passed privacy review, automated quality, eight maintainer-reported core browser checks and agent-observed hosted smoke checks, the maintainer explicitly requested beta publication. The broader browser matrix and fictional walkthrough are follow-up work rather than beta.1 publication gates. Unperformed checks remain visibly unverified. This supersedes the earlier procedure that kept the formal beta draft until all those tasks were complete.
 
-- Review all reachable source history and metadata, examples, evaluation results, build assets, skill ZIPs, GitHub issues/discussions, workflow logs/artifacts and draft-release contents. Resolve private-content findings before publication. Keep original MIT and all required dependency notices, including transitive dependencies.
-- From a clean checkout, pass installation, lint, TypeScript, tests, production build, skill validation/packaging and release-content checks. Verify draft archive checksums against the reviewed local assets.
-- Complete all eight rows of [the guided browser check](PREVIEW_CHECK.md) using fictional data. Maintainer-reported results are acceptable and must be labelled as such. Unresolved core-flow, persistence, recovery, isolation or misleading-success failures block publication.
-- Align README, app/skills pages, security guidance and compatibility claims to **early preview**. Keep installation instructions usable from repository folders while release downloads remain unpublished.
-- Record the reviewed commit and results in [READINESS.md](READINESS.md). A changed application requires rerunning affected browser checks and the automated suite. Changed skills/method require relevant host evaluations; unchanged skills retain the existing Codex evidence.
+## Prepare a release
 
-## Publish the early preview
+1. Review the complete candidate history and metadata, examples, evaluations, build assets, skill archives and any new media for private content. Keep original MIT and required dependency notices. Resolve actual privacy, licensing and data-integrity findings before release.
+2. Pass clean installation and `npm run check`, including lint, TypeScript, tests, build, skill validation and release-content checks. Build and inspect the four skill archives, validate their entries against source and verify uploaded SHA-256 digests. Unchanged, previously validated archives may be retained after rechecking their contents and hashes.
+3. Record the candidate and actual browser evidence in READINESS.md and COMPATIBILITY.md. Repeat checks affected by application changes. Reevaluate skills when the canonical method or skill instructions change; otherwise retain the existing Codex results.
+4. Align the app, README, installation guide and release notes to the release’s actual status and limitations. Keep social posts and tester invitations separate from repository/release publication.
+5. Push the reviewed candidate to main and require successful CI. Point the release/tag at that exact commit, publish as a prerelease with skill ZIPs and checksums, then verify public release metadata and downloads. Never claim that a draft asset link is public.
+6. Verify quality-gated Pages deployment and hosted HTTPS assets/navigation. Keep the current project base and cache prefix; do not change stored workspace data, schemas or dependencies solely for release packaging.
 
-1. Push the reviewed candidate to `HamzaBendemra/momentum` main and require successful CI. MyVault remains private and unchanged.
-2. Make Momentum public and enable private vulnerability reporting. Keep Discussions and the six starter issues available. Retain `v0.1.0-beta.1` as a draft release; do not create a public release tag or advertise its downloads yet.
-3. Enable Pages with GitHub Actions as its source, set `ENABLE_PAGES=true`, then dispatch the quality workflow. Deployment continues to depend on quality checks. Preserve the `/momentum/` asset base, hash routes and service-worker scope; cleanup must stay within `momentum-public:/momentum/:` caches.
-4. Verify HTTPS returns 200 for the landing page and required assets, then complete the hosted smoke check in PREVIEW_CHECK.md. Confirm the deployed commit/version, landing, Focus, fictional demo, skills links and hash-route refresh. Browser checks remain local-only.
-5. Only after hosting passes, replace the README's unpublished-hosting notice and local entry points with verified HTTPS landing/app/demo links. Keep the early-preview and unverified-capability disclosures. If deployment fails, retain local-run instructions and fix the deployment before advertising availability.
+## Follow-up work
 
-## Later formal beta gates
+Complete the local TESTING.md matrix: full desktop/phone/keyboard and screen-reader coverage, failure states, date transitions, installation, offline use and cache isolation. Produce and inspect the 75-second fictional walkthrough, captions and screenshots before sharing them. Keep browser checks out of CI and walkthrough media outside the offline cache.
 
-- Complete the full TESTING.md browser matrix, including desktop/phone, keyboard, failure states, date transitions, installation, offline use and cache isolation. Do not claim untested platforms.
-- Produce and inspect the 75-second fictional walkthrough, captions and screenshots. Keep the video outside the offline asset cache.
-- Recheck final history, build, archives and media. Point the draft release at the final tested commit; publish the prerelease with skill ZIPs, checksums, walkthrough and captions only after these gates pass.
-- Codex skills are tested. Claude Code, ChatGPT and Cowork remain unverified and do not block release. External feedback is a learning target, never invented evidence.
+Claude Code, ChatGPT and Cowork remain unverified. Seek feedback from roughly five willing testers only after separate invitation authorization; report real observations, never invented outcomes. Reddit/X posts and invitations remain unperformed drafts.
 
-## Feedback and promotion
-
-Seek roughly five willing testers after separate invitation authorization. Ask them to try an invented project, backup recovery and a skill; record confusion and failures without collecting personal workspaces. Use Discussions for questions and Issues for accepted work. No testimonials or usage results are implied.
-
-The launch kit contains drafts only. Posting to Reddit/X and sending invitations are separate from repository publication. No automatic messages or scheduled outreach are included.
+MyVault, the personal website, DNS and account-wide domain settings remain outside the release process.
