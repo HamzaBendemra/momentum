@@ -1,6 +1,6 @@
 # Security reports
 
-Please report vulnerabilities privately through GitHub’s **Security → Report a vulnerability** for this repository when private vulnerability reporting is enabled. If that route is unavailable, use the maintainer’s public contact link on [GitHub](https://github.com/HamzaBendemra) to arrange a private channel before sharing details.
+Please report vulnerabilities privately through [GitHub private vulnerability reporting](https://github.com/HamzaBendemra/momentum/security/advisories/new), which is enabled for this repository. If that route is unavailable, use the maintainer’s public contact link on [GitHub](https://github.com/HamzaBendemra) to arrange a private channel before sharing details.
 
 Include the affected version, a synthetic reproduction, expected behaviour and potential impact. Do not attach your real backup, tokens, private notes or another person’s records. Do not exploit an issue against anyone else’s data.
 

@@ -1,6 +1,6 @@
 # Early-preview readiness
 
-**Core preview gates passed; publication awaiting successful CI on the recorded candidate.** Eight core browser checks passed according to the maintainer; the separate hosted smoke check remains pending. The formal beta release stays draft even after the preview is public.
+**Public early preview published on 27 September 2026.** Eight core browser checks passed according to the maintainer; the agent observed the separate hosted smoke check passing. The formal beta release remains draft.
 
 ## Candidate
 
@@ -21,7 +21,7 @@ Review date: 27 September 2026. The original full audit below applies to `c05cea
 | Draft asset hashes | Passed | All four ZIPs match the source allowlist; five uploaded asset hashes match the reviewed local files. Draft notes match the checked-in text |
 | Navy candidate GitHub CI | Passed | [Run 36304213179](https://github.com/HamzaBendemra/momentum/actions/runs/36304213179) at cc40852; quality passed, deployment skipped |
 | Core Chrome acceptance | 8/8 PASS — maintainer-reported | Navy build and fresh disposable Chrome profile confirmed; environment and provenance recorded in PREVIEW_CHECK.md. Not agent-observed |
-| Publication / hosted smoke check | NOT RUN | Repository private, ENABLE_PAGES=false; no live-site claim |
+| Publication / hosted smoke check | Passed | Repository public; private vulnerability reporting enabled; Pages workflow deployed d076e02; HTTPS assets and Chrome navigation/refresh verified |
 
 ## Audit scope and findings
 
@@ -43,7 +43,7 @@ These checks reduce publication risk; finite scans and manual review are not a g
 - Source and built CSS/HTML/manifest/SVG inspected for previous purple literals: none remain. Both PNGs were regenerated from the unchanged SVG geometry; the 512-pixel icon was visually inspected. Generated metadata was stripped; only IHDR, IDAT and IEND chunks remain.
 - New production cache: `momentum-public:/momentum/:2167653d73362e0b`; 10 assets. The existing build generator and `/momentum/` scope/cleanup rules are unchanged.
 - Agent visual browser checks remain blocked by the saved permission restriction. The maintainer subsequently reported all eight core checks passed and confirmed the navy build in a fresh disposable Chrome profile. This does not claim that the full accessibility, narrow-layout or offline matrix passed.
-- The repository remains private, Pages disabled, and the existing beta release draft. The earlier audit and draft asset hashes remain historical evidence; recheck the complete publication candidate before changing visibility.
+- At the navy preparation stage the repository remained private and Pages disabled. Publication subsequently passed the checks recorded below; the existing beta release stays draft.
 
 ## Publication recheck
 
@@ -63,7 +63,17 @@ dbe53357ce4561c248e7790ee6cb53d6451f00a747a8e2c941388ea0abb51357  momentum-choos
 
 ## Browser result record
 
-Provenance: maintainer-reported on 27 September 2026, eight passes and no failures reported. The maintainer confirmed the navy build and fresh disposable Chrome profile. Chrome 154.0.8037.57 and macOS 27.0 (26A428) were inspected on this machine; exact test timestamp and hash were not independently supplied. The applicable application commit is 37e7417, with documentation-only checkout cc40852. See PREVIEW_CHECK.md for the full record. Agent browser access remains blocked; no agent-observed interactive pass is claimed.
+Provenance: maintainer-reported on 27 September 2026, eight passes and no failures reported. The maintainer confirmed the navy build and fresh disposable Chrome profile. Chrome 154.0.8037.57 and macOS 27.0 (26A428) were inspected on this machine; exact test timestamp and hash were not independently supplied. The applicable application commit is 37e7417, with documentation-only checkout cc40852. See PREVIEW_CHECK.md for the full record. Agent access to the local preview remains blocked. The core local passes are maintainer-reported; the separate hosted observations below are agent-observed.
+
+## Hosted publication result
+
+- Published commit: `d076e021e91161ce25962b91ea62ff33ecf68fa9`; application bytes match navy candidate `37e7417`. [Final private CI](https://github.com/HamzaBendemra/momentum/actions/runs/36306150101) passed before the visibility change; its log was scanned without findings.
+- Repository visibility is public, private vulnerability reporting is enabled, and `ENABLE_PAGES=true`. [Quality-gated deployment](https://github.com/HamzaBendemra/momentum/actions/runs/36306222641) passed. The existing beta release and all packaged downloads remain draft/unpublished.
+- Direct HTTPS at `https://bendemra.ai/momentum/`, all ten precache entries, service worker and offline manifest returned 200 and matched local build bytes. No DNS, account-domain or personal-site changes were made.
+- Agent-observed hosted Chrome smoke check on 27 September 2026: landing renders; Try the app opens empty onboarding; Focus refresh works; demo is explicitly fictional and refreshes correctly; Use the skills displays all three repository installation links and honest compatibility disclosures. Early-preview version `0.1.0-beta.1` is displayed. The navy landing page was visually inspected.
+- The local automation block remains; the hosted address is accessible. This hosted navigation check does not replace the maintainer's eight core checks and does not establish offline, installation, Safari/mobile or accessibility support.
+- Non-blocking observation: landing/skills can retain the previous workspace browser-tab title after client-side navigation. Visible page content and routes render correctly; a title update is later polish.
+- README hosted links were restored only after these checks. Subsequent publication-record edits do not change the application build.
 
 ## Later beta work
 

@@ -2,7 +2,7 @@
 
 Turn a goal into today's outcome—and a record of what changed.
 
-Momentum is being prepared as an **early preview**: a local React application and three self-contained agent skills sharing one method. Source and hosting can become public after the preview gates pass; this formal beta release and its packaged downloads remain unpublished until the broader beta checks are complete.
+Momentum is available as a **public early preview**: a local React application and three self-contained agent skills sharing one method. Source and [hosting](https://bendemra.ai/momentum/) passed the preview gates; this formal beta release and its packaged downloads remain unpublished until the broader beta checks are complete.
 
 ## Included
 
@@ -14,7 +14,7 @@ Momentum is being prepared as an **early preview**: a local React application an
 
 ## Verification
 
-Consult the [readiness record](https://github.com/HamzaBendemra/momentum/blob/main/docs/READINESS.md) and [compatibility record](https://github.com/HamzaBendemra/momentum/blob/main/docs/COMPATIBILITY.md) for the candidate commit and actual checks. Automated coverage is not a browser pass. The minimum manual browser check blocks preview publication until reported; the full browser matrix and walkthrough remain formal beta work.
+Consult the [readiness record](https://github.com/HamzaBendemra/momentum/blob/main/docs/READINESS.md) and [compatibility record](https://github.com/HamzaBendemra/momentum/blob/main/docs/COMPATIBILITY.md) for the candidate commit and actual checks. Automated coverage is not a browser pass. The eight core local browser checks passed according to the maintainer; hosted navigation and refresh were checked by the agent. The full browser matrix and walkthrough remain formal beta work.
 
 All three skills were installed and evaluated in Codex CLI 0.149.0. Claude Code, ChatGPT and Cowork are unverified. No broad browser, offline, installation, external-feedback or testimonial claim is made.
 

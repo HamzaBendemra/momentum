@@ -33,7 +33,7 @@ Keep the fictional profile and backups until any reported defects are resolved. 
 - Report received: 27 September 2026. An exact test timestamp was not supplied.
 - Local environment inspected when recording the report: Chrome `154.0.8037.57`, macOS `27.0` (build `26A428`). These versions were read from this machine, not supplied independently by the maintainer.
 - Fresh disposable Chrome profile: maintainer confirmed. All eight results: PASS; no failures reported.
-- Agent browser automation remains blocked; full browser/accessibility/offline checks and the separate hosted smoke check remain pending.
+- Local agent browser automation remains blocked; full browser/accessibility/offline checks remain pending. The separately accessible hosted smoke check subsequently passed; see READINESS.md.
 
 ## Reply template
 
@@ -51,6 +51,10 @@ Test date:
 8: PASS / FAIL / NOT RUN
 Failure details, if any:
 ```
+
+## Hosted result
+
+Agent-observed PASS on 27 September 2026 at deployed commit `d076e021e91161ce25962b91ea62ff33ecf68fa9`: HTTPS landing, app entry, labelled fictional demo, skills page, Focus refresh and demo refresh. All required assets returned 200 and matched the reviewed production build. No core local test is relabelled as agent-observed.
 
 ## After hosting is enabled
 

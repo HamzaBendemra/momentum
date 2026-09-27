@@ -2,7 +2,7 @@
 
 Version: `0.1.0-beta.1`. The early preview opens the source and hosted app after privacy, automated quality and core browser checks pass. The formal GitHub beta release stays in draft. The public core becomes the source of truth; integrating changes into the private predecessor is separate work.
 
-**Hosted preview not yet published.** The eventual address is `https://bendemra.ai/momentum/`, inherited from the account's existing GitHub Pages custom domain. Link directly to HTTPS. Do not change DNS, the personal-site repository or account-wide domain settings.
+**Early preview published on 27 September 2026:** [Momentum](https://bendemra.ai/momentum/). The address is inherited from the account's existing GitHub Pages custom domain. Link directly to HTTPS. Do not change DNS, the personal-site repository or account-wide domain settings.
 
 ## Early-preview publication gates
 

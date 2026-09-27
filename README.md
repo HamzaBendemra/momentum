@@ -6,10 +6,10 @@ A quiet local application and three portable agent skills, built around the same
 
 | Try the app | Use the skills |
 | --- | --- |
-| **Hosted preview not yet published.** [Run Momentum locally](#run-locally) · [Try the fictional demo locally](#run-locally) | [Install the three skills](docs/SKILLS.md) · [Read the method](method/METHOD.md) |
+| [Try the app](https://bendemra.ai/momentum/#/focus) · [Fictional demo](https://bendemra.ai/momentum/#/demo/focus) · [Overview](https://bendemra.ai/momentum/) | [Install the three skills](docs/SKILLS.md) · [Read the method](method/METHOD.md) |
 | A visual workspace for campaigns, daily outcomes, proof and weekly decisions. | Use your existing notes or a selected app export. Tested in Codex; Claude Code behavior is unverified. |
 
-**Early preview preparation:** Source and hosting can become public after the privacy review, automated checks and core browser acceptance checks pass. The formal beta release and packaged downloads remain unpublished until the broader beta checks are complete. See [compatibility and validation](docs/COMPATIBILITY.md) for actual results, including any blockers. No external user outcomes or testimonials are claimed.
+**Public early preview:** Source and the hosted app are available. Privacy and automated checks passed, the eight core local browser checks are maintainer-reported passes, and hosted navigation/refresh checks passed. The formal beta release and packaged downloads remain unpublished until the broader beta checks are complete. See [compatibility and validation](docs/COMPATIBILITY.md) for actual results, including any blockers. No external user outcomes or testimonials are claimed.
 
 ## The loop
 
@@ -45,7 +45,7 @@ npm run build
 npm run preview
 ```
 
-Open the preview server's printed URL with either path above. The hosted app will be linked here only after deployment and live checks pass.
+Open the preview server's printed URL with either path above. The [hosted early preview](https://bendemra.ai/momentum/) uses the same application build.
 
 Your workspace is stored in IndexedDB in that browser and origin. The local development URL, preview URL and hosted URL are separate origins; use a complete backup to transfer records. The demo uses a separate database. No account, backend, cloud sync, embedded AI calls or automatic telemetry is included. Keep backups outside the browser. See [privacy and recovery](docs/PRIVACY.md).
 

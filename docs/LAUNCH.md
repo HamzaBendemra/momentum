@@ -6,7 +6,7 @@ Lead with a familiar problem: a plan tells you what matters, but often leaves to
 
 ## Public experience
 
-**Hosted preview not yet published.** These are future destinations, unavailable until deployment and live checks pass. The app inherits the account's existing GitHub Pages domain; link directly to HTTPS.
+**Early preview published on 27 September 2026.** The destinations below passed deployment and hosted smoke checks. The app inherits the account's existing GitHub Pages domain; link directly to HTTPS. Social posts and invitations remain unperformed drafts.
 
 - Landing: `https://bendemra.ai/momentum/`
 - App: `https://bendemra.ai/momentum/#/focus`
@@ -18,7 +18,7 @@ These URLs are intended publication destinations; do not announce availability u
 
 ## 75-second walkthrough script
 
-Use the fictional urban-tree project throughout. Show the actual production build. Never display real records, browser history, credentials or another application. Use captions so the recording works muted. The recording is pending browser verification and belongs to the formal beta launch, after the early-preview publication gate. This script is not a claim that a video already exists.
+Use the fictional urban-tree project throughout. Show the actual production build. Never display real records, browser history, credentials or another application. Use captions so the recording works muted. The recording remains pending and belongs to the formal beta launch; the early preview is already public. This script is not a claim that a video already exists.
 
 | Time | Show | Caption / narration |
 | --- | --- | --- |
