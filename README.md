@@ -6,7 +6,7 @@ A quiet local application and three portable agent skills, built around the same
 
 | Try the app | Use the skills |
 | --- | --- |
-| [Open Momentum](https://hamzabendemra.github.io/momentum/#/focus) · [Explore the fictional demo](https://hamzabendemra.github.io/momentum/#/demo/focus) | [Install the three skills](docs/SKILLS.md) · [Read the method](method/METHOD.md) |
+| **Hosted preview not yet published.** [Run Momentum locally](#run-locally) · [Try the fictional demo locally](#run-locally) | [Install the three skills](docs/SKILLS.md) · [Read the method](method/METHOD.md) |
 | A visual workspace for campaigns, daily outcomes, proof and weekly decisions. | Use your existing notes or a selected app export. Tested in Codex; Claude Code behavior is unverified. |
 
 **Beta preparation:** The repository starts private. Hosted links and release downloads become available after the required verification gates pass. See [compatibility and validation](docs/COMPATIBILITY.md) for actual results, including any blockers. No external user outcomes or testimonials are claimed.
@@ -33,12 +33,19 @@ npm ci
 npm run dev
 ```
 
-Open the printed URL at `/momentum/`. For the production build and offline behaviour:
+Open the printed URL at `/momentum/`. Use that same server address and port with these paths:
+
+- Focus: `/momentum/#/focus` — start your own empty workspace.
+- Fictional demo: `/momentum/#/demo/focus` — explore the separate example workspace.
+
+For the production build and offline behaviour:
 
 ```sh
 npm run build
 npm run preview
 ```
+
+Open the preview server's printed URL with either path above. The hosted app will be linked here only after deployment and live checks pass.
 
 Your workspace is stored in IndexedDB in that browser and origin. The local development URL, preview URL and hosted URL are separate origins; use a complete backup to transfer records. The demo uses a separate database. No account, backend, cloud sync, embedded AI calls or automatic telemetry is included. Keep backups outside the browser. See [privacy and recovery](docs/PRIVACY.md).
 

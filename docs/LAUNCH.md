@@ -6,9 +6,11 @@ Lead with a familiar problem: a plan tells you what matters, but often leaves to
 
 ## Public experience
 
-- Landing: `https://hamzabendemra.github.io/momentum/`
-- App: `https://hamzabendemra.github.io/momentum/#/focus`
-- Fictional demo: `https://hamzabendemra.github.io/momentum/#/demo/focus`
+**Hosted preview not yet published.** These are future destinations, unavailable until deployment and live checks pass. The app inherits the account's existing GitHub Pages domain; link directly to HTTPS.
+
+- Landing: `https://bendemra.ai/momentum/`
+- App: `https://bendemra.ai/momentum/#/focus`
+- Fictional demo: `https://bendemra.ai/momentum/#/demo/focus`
 - Skills: `https://github.com/HamzaBendemra/momentum/blob/main/docs/SKILLS.md`
 - Contribute: `https://github.com/HamzaBendemra/momentum/blob/main/CONTRIBUTING.md`
 
@@ -41,7 +43,7 @@ The same method is available as three portable skills: choose an outcome, review
 
 I’m particularly interested in where the loop is unclear: does “today’s outcome” help you decide, or does it add ceremony? Contributions around onboarding, accessibility, examples and evidence fidelity are welcome.
 
-Repository: [Momentum](https://github.com/HamzaBendemra/momentum). [Fictional demo](https://hamzabendemra.github.io/momentum/#/demo/focus). MIT licensed. I’m the author.
+Repository: [Momentum](https://github.com/HamzaBendemra/momentum). [Fictional demo](https://bendemra.ai/momentum/#/demo/focus). MIT licensed. I’m the author.
 
 ## Reddit — agent community variant
 
