@@ -6,7 +6,7 @@ Early-preview candidate `0.1.0-beta.1`. **Not yet cleared for publication:** the
 | --- | --- | --- |
 | Clean install, lint, TypeScript and production build | Passed locally | Node 22.22.2; `npm ci`, `npm run check`; no credentials or environment file |
 | Public model and IndexedDB transactions | 26 tests passed | Full local loop, reload, timezone/rest/reentry, daily completion vs evidence, priorities, archive/reopen, backup refusal and recovery, on-disk rejection fixtures, write failure, concurrent writes, demo database and navigation isolation, selected exports and decision dates |
-| GitHub quality workflow | Passed at the current app commit | [Run for 16b7831](https://github.com/HamzaBendemra/momentum/actions/runs/36299825751); latest documentation and packaging checks appear in repository Actions |
+| GitHub quality workflow | Passed at the current app commit | [Run for c05ceaf](https://github.com/HamzaBendemra/momentum/actions/runs/36300574763); latest documentation and packaging checks appear in repository Actions |
 | Production app, desktop / phone / keyboard | Pending local browser verification | A saved browser permission blocks the local preview, including the renewed Chrome attempt. A guided maintainer check is prepared; no visual or interactive pass is claimed |
 | Pages path, PWA installation and offline | Build configuration checked; browser behaviour pending | Generated list covers all production assets under `/momentum/`; manifest and cache scope prepared, but installation/offline behaviour is not verified |
 | Codex CLI 0.149.0 | All three skills installed and behaviour checked | Disposable project `.agents/skills`; bundled methods loaded; nine raw-input scenarios evaluated; host-selected default model |

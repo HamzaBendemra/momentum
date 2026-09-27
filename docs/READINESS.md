@@ -6,19 +6,46 @@
 
 - Version: `0.1.0-beta.1`; public workspace schema 1.
 - Preparation started from `16b7831836fbc44a9dd9667dc0f662feaa3673f5`.
-- Browser candidate commit: pending freeze after preparation checks.
+- Browser candidate commit: `c05ceafe24ca7171382993aa6fdbfa4705b956a5`. The production preview was built from this application code. Subsequent evidence-only documentation commits do not change that browser candidate.
 - Current work changes preview disclosures, documentation, rejection fixtures and dependency notices. No runtime dependencies, storage schema or application API changes are planned.
+
+Review date: 27 September 2026. The evidence below applies to the browser candidate and its five-commit history; later documentation-only evidence updates do not change the tested app.
 
 ## Gate evidence
 
 | Gate | Status | Evidence |
 | --- | --- | --- |
-| Full source/history, metadata and remote-content review | In progress | Audit findings will be recorded after review completes |
-| MIT and bundled dependency notices | Corrected; final check pending | Added notices for scheduler, loose-envify and js-tokens; seven production dependency packages covered |
-| Clean-clone automated suite and packaging | Pending candidate run | Earlier candidate passed 23 tests; new on-disk rejection fixtures must also pass |
-| Draft asset hashes | Pending candidate review | Compare all five uploaded assets with reviewed local files |
+| Full source/history, metadata and remote-content review | Passed for the reviewed candidate | Five commits / 102 historical blobs scanned; current application, removed historical content, examples, evaluation records, manifests and scripts reviewed. No private-content findings in the reviewed material |
+| MIT and dependency notices | Passed after correction | Retained the exact license texts for all seven production packages and verified notices/LICENSE are copied into the build |
+| Clean-clone automated suite and packaging | Passed | Node 22.22.2; npm ci, npm run check, npm run skills:build and release:check; 26 tests pass, including all three on-disk rejection files. npm reported zero known vulnerabilities |
+| Draft asset hashes | Passed | All four ZIPs match the source allowlist; five uploaded asset hashes match the reviewed local files. Draft notes match the checked-in text |
+| Candidate GitHub CI | Passed | [Run 36300574763](https://github.com/HamzaBendemra/momentum/actions/runs/36300574763); quality passed, deployment skipped |
 | Core Chrome acceptance | NOT RUN | All eight rows in PREVIEW_CHECK.md are pending; maintainer-reported results accepted |
 | Publication / hosted smoke check | NOT RUN | Repository private, ENABLE_PAGES=false; no live-site claim |
+
+## Audit scope and findings
+
+- Every reachable commit uses the intended public author identity and GitHub noreply address. The repository has fresh Momentum history; no private predecessor history was imported. The historical review includes content removed by later commits, not just the current tree.
+- Examples, demo records, tests and retained skill outputs describe fictional field-guide/workshop scenarios. The intentionally invalid private-format fixture is fabricated with empty arrays, never derived from a real backup.
+- Reviewed six GitHub issue bodies with no comments, zero Discussions and zero pull requests. All five completed workflow logs, including the candidate run, contained no matches for the checked credential/private-content patterns. There were no stored Actions artifacts. Draft notes and archive entries were inspected.
+- Corrected two readiness findings: unpublished-release download links in the app/skills documentation, and missing transitive-dependency notices for scheduler 0.23.2, loose-envify 1.4.0 and js-tokens 4.0.0. No dependency versions or application/storage interfaces changed. Existing skill/method bytes and Codex evaluation inputs/outputs are unchanged.
+- Runtime source has no backend, telemetry, model calls or external asset loads. GitHub links are explicit navigation. Library diagnostic/schema URLs in the bundle do not initiate application network calls. Production fetch handling is same-origin and limited to `/momentum/`.
+- The generated offline manifest lists all 10 precached assets under `/momentum/`; cache cleanup is restricted to `momentum-public:/momentum/:`. This is a source/build inspection, not a claim that browser offline behaviour passed.
+- The two PNG icons and SVG contain only the original Momentum mark. PNG chunks are IHDR/IDAT/IEND with no textual or EXIF metadata. No screenshots or recordings are included. All dependency resolutions use registry.npmjs.org; the lockfile's install scripts belong to esbuild and fsevents.
+
+These checks reduce publication risk; finite scans and manual review are not a guarantee of secret detection or a security certification. Recheck any new commits and assets before publication.
+
+## Draft asset SHA-256 record
+
+The draft remains unpublished. Hashes verified against GitHub asset digests on 27 September 2026:
+
+```text
+05143a2d7ce752c5502433570ea50aedf80de340ca39fb8fae97218069d2a84b  SHA256SUMS
+18fe921b710f39c314783c9b87ec521d6ff2a591df6a652b17c1d90226fa4350  momentum-build-narrative.zip
+dbe53357ce4561c248e7790ee6cb53d6451f00a747a8e2c941388ea0abb51357  momentum-choose-outcome.zip
+16bcf7123cf8bfd9ad286a7211291f721cd4336ee0024c4f66f0f1e10c1bb847  momentum-review-week.zip
+05a9d407dc69068379b20db0d435f14534e73148f9aee7753f246f49119922b1  momentum-skills.zip
+```
 
 ## Browser result record
 
