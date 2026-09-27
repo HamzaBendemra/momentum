@@ -115,8 +115,9 @@ export default function Proof({ w, date, act }: ViewProps) {
           </form>
         ) : (
           <Empty>
-            Create a campaign in <a href="#/focus">Focus</a> first. Real
-            workspaces start with no completed examples.
+            Create a campaign in{" "}
+            <a href={w.kind === "demo" ? "#/demo/focus" : "#/focus"}>Focus</a>{" "}
+            first. Real workspaces start with no completed examples.
           </Empty>
         )}
       </section>

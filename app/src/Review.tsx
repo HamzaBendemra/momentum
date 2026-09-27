@@ -97,10 +97,12 @@ export default function Review({ w, date, act }: ViewProps) {
                 <h3>{c.outcome}</h3>
                 <p>
                   {w.rollovers.find((r) => r.sourceDate === c.date)?.action ||
-                    (w.milestones.find((m) => m.id === c.milestoneId)
-                      ?.completedAt
-                      ? "Milestone marked shipped; inspect its evidence."
-                      : "No completion inferred.")}
+                    (c.completedAt
+                      ? "Outcome marked done; inspect its evidence."
+                      : w.milestones.find((m) => m.id === c.milestoneId)
+                            ?.completedAt
+                        ? "Milestone marked shipped; inspect its evidence."
+                        : "No completion inferred.")}
                 </p>
               </article>
             ))

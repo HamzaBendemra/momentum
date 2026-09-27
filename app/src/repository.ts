@@ -7,12 +7,24 @@ import {
   type Workspace,
 } from "./model";
 export class WorkspaceDB extends Dexie {
+  readonly kind: Workspace["kind"];
   state!: Table<{ key: string; value: Workspace }, string>;
   recovery!: Table<{ id: string; backup: Backup }, string>;
   constructor(kind: Workspace["kind"], name = `momentum-public-v1-${kind}`) {
     super(name);
+    this.kind = kind;
     this.version(1).stores({ state: "key", recovery: "id" });
   }
+}
+// At most one connection per workspace per page, including React development remounts.
+const databases = new Map<Workspace["kind"], WorkspaceDB>();
+export function getWorkspaceDB(kind: Workspace["kind"]) {
+  let db = databases.get(kind);
+  if (!db) {
+    db = new WorkspaceDB(kind);
+    databases.set(kind, db);
+  }
+  return db;
 }
 export function encodeBackup(w: Workspace): Backup {
   return backupSchema.parse({
@@ -43,9 +55,15 @@ export function parseBackup(json: string, kind: Workspace["kind"]): Backup {
   return parsed.data;
 }
 export async function readWorkspace(db: WorkspaceDB, kind: Workspace["kind"]) {
+  if (db.kind !== kind) throw new Error("Workspace database kind mismatch");
   return db.transaction("rw", db.state, async () => {
     const row = await db.state.get("workspace");
-    if (row) return workspaceSchema.parse(row.value);
+    if (row) {
+      const value = workspaceSchema.parse(row.value);
+      if (value.kind !== db.kind)
+        throw new Error("Workspace database kind mismatch");
+      return value;
+    }
     const value = emptyWorkspace(kind);
     await db.state.put({ key: "workspace", value });
     return value;
@@ -62,6 +80,7 @@ export async function mutateWorkspace(
     mutator(draft);
     draft.revision++;
     const value = workspaceSchema.parse(draft);
+    if (value.kind !== db.kind) throw new Error("Cannot change workspace kind");
     await db.state.put({ key: "workspace", value });
     return value;
   });
@@ -71,6 +90,7 @@ export async function replaceWorkspace(
   backup: Backup,
   kind: Workspace["kind"],
 ) {
+  if (kind !== db.kind) throw new Error("Workspace database kind mismatch");
   const checked = parseBackup(JSON.stringify(backup), kind);
   return db.transaction("rw", db.state, db.recovery, async () => {
     const previous = await db.state.get("workspace");

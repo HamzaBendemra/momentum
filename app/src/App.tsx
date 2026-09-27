@@ -5,7 +5,7 @@ import Proof from "./Proof";
 import Review from "./Review";
 import Settings from "./Settings";
 import { today, type Workspace } from "./model";
-import { WorkspaceDB, mutateWorkspace, readWorkspace } from "./repository";
+import { getWorkspaceDB, mutateWorkspace, readWorkspace } from "./repository";
 import { demoWorkspace } from "./demo";
 const github = "https://github.com/HamzaBendemra/momentum";
 const surfaces = [
@@ -216,7 +216,7 @@ function WorkspaceApp({
   kind: Workspace["kind"];
   route: string;
 }) {
-  const [db] = useState(() => new WorkspaceDB(kind));
+  const [db] = useState(() => getWorkspaceDB(kind));
   const [w, setW] = useState<Workspace | null>(null);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");

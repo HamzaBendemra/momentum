@@ -52,6 +52,7 @@ export function demoWorkspace(): Workspace {
       milestoneId: "demo-route",
       outcome: "Walk the route and record which signs are readable",
       proofDefinition: "Annotated route notes",
+      completedAt: at,
       notToday: "Designing the full guide",
     },
   ];

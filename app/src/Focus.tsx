@@ -85,7 +85,8 @@ function Onboarding({ w, date, act }: ViewProps) {
             if (outcome)
               saveCommitment(d, today(d.settings.timezone), m.id, outcome);
           }, "Your workspace is ready.");
-          if (result) location.hash = "/focus";
+          if (result)
+            location.hash = w.kind === "demo" ? "/demo/focus" : "/focus";
         }}
       >
         <div className="two-col">
@@ -685,7 +686,9 @@ export default function Focus(props: ViewProps) {
                 Choose what matters now; old promises are available below when
                 you’re ready.
               </p>
-              <a href="#/review">Look back before choosing →</a>
+              <a href={w.kind === "demo" ? "#/demo/review" : "#/review"}>
+                Look back before choosing →
+              </a>
             </aside>
           )}
           {!workingDay(w, date) && (
@@ -729,9 +732,34 @@ export default function Focus(props: ViewProps) {
                     </p>
                   )}
                   <div className="actions">
-                    <a className="button primary" href="#/proof">
+                    <a
+                      className="button primary"
+                      href={w.kind === "demo" ? "#/demo/proof" : "#/proof"}
+                    >
                       Add proof
                     </a>
+                    <button
+                      onClick={() =>
+                        act(
+                          (d) => {
+                            const row = d.commitments.find(
+                              (c) => c.date === date,
+                            )!;
+                            row.completedAt = row.completedAt
+                              ? null
+                              : new Date().toISOString();
+                            row.updatedAt = new Date().toISOString();
+                          },
+                          saved.completedAt
+                            ? "Outcome reopened."
+                            : "Outcome marked done. Evidence and impact remain separate.",
+                        )
+                      }
+                    >
+                      {saved.completedAt
+                        ? "Reopen outcome"
+                        : "Mark outcome done"}
+                    </button>
                     <button onClick={() => setEditing(true)}>
                       Edit outcome
                     </button>

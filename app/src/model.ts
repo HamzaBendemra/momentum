@@ -63,6 +63,7 @@ const workspaceShape = z
           outcome: title,
           proofDefinition: text,
           notToday: text,
+          completedAt: instant.nullable(),
           createdAt: instant,
           updatedAt: instant,
         })
@@ -108,6 +109,7 @@ const workspaceShape = z
         .object({
           ...base,
           sourceDate: day,
+          date: day,
           milestoneId: id,
           action: z.enum(["recommit", "reschedule", "delegate", "drop"]),
           reason: text,
@@ -122,6 +124,7 @@ const workspaceShape = z
           ...base,
           milestoneId: id,
           previousDue: day,
+          date: day,
           nextDue: day,
           reason: text,
         })
@@ -334,6 +337,7 @@ export function pendingPromises(w: Workspace, date: string) {
   return w.commitments.filter(
     (c) =>
       c.date < date &&
+      !c.completedAt &&
       !w.rollovers.some((r) => r.sourceDate === c.date) &&
       !w.milestones.find((m) => m.id === c.milestoneId)?.completedAt,
   );
@@ -350,6 +354,10 @@ export function saveCommitment(
   const at = new Date().toISOString();
   if (current)
     Object.assign(current, {
+      completedAt:
+        current.outcome === outcome && current.milestoneId === milestoneId
+          ? current.completedAt
+          : null,
       milestoneId,
       outcome,
       proofDefinition,
@@ -365,6 +373,7 @@ export function saveCommitment(
       notToday,
       createdAt: at,
       updatedAt: at,
+      completedAt: null,
     });
 }
 export function changeDue(
@@ -372,6 +381,7 @@ export function changeDue(
   id: string,
   nextDue: string,
   reason: string,
+  date = today(w.settings.timezone),
 ) {
   const m = w.milestones.find((m) => m.id === id);
   if (!m) throw new Error("Milestone not found");
@@ -380,6 +390,7 @@ export function changeDue(
       ...stamp(),
       milestoneId: id,
       previousDue: m.due,
+      date,
       nextDue,
       reason,
     });
@@ -399,6 +410,10 @@ export function decideRollover(
   const promise = w.commitments.find((c) => c.date === sourceDate);
   if (!promise || w.rollovers.some((r) => r.sourceDate === sourceDate))
     throw new Error("This promise already has a decision");
+  if (promise.completedAt || sourceDate >= date)
+    throw new Error(
+      "Only an unfinished promise from an earlier day can roll over",
+    );
   if (action === "recommit") {
     if (w.commitments.some((c) => c.date === date))
       throw new Error(
@@ -424,11 +439,13 @@ export function decideRollover(
       promise.milestoneId,
       targetDate,
       reason || "Deliberate rollover",
+      date,
     );
   }
   w.rollovers.push({
     ...stamp(),
     sourceDate,
+    date,
     milestoneId: promise.milestoneId,
     action,
     reason,

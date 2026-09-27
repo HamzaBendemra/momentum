@@ -59,6 +59,19 @@ afterEach(async () => {
   await Promise.all(dbs.splice(0).map((d) => d.delete()));
 });
 describe("public workspace", () => {
+  it("can finish a daily outcome without shipping its milestone or inventing proof", () => {
+    const w = fixture();
+    saveCommitment(w, "2026-10-01", "m1", "Finish one section");
+    w.commitments[0].completedAt = new Date().toISOString();
+    expect(pendingPromises(w, "2026-10-02")).toEqual([]);
+    expect(w.milestones[0].completedAt).toBeNull();
+    expect(w.evidence).toEqual([]);
+    expect(
+      narrativeMarkdown(w, ["c1"], "2026-10-01", "2026-10-02"),
+    ).not.toContain("Finish one section");
+    saveCommitment(w, "2026-10-01", "m1", "Finish another section");
+    expect(w.commitments[0].completedAt).toBeNull();
+  });
   it("starts without fabricated records", () => {
     const w = emptyWorkspace();
     expect(w.campaigns).toEqual([]);
@@ -225,6 +238,19 @@ describe("public workspace", () => {
   });
 });
 describe("transactional storage and backups", () => {
+  it("rejects an incorrect caller kind without touching the real database", async () => {
+    const d = db();
+    const before = await readWorkspace(d, "real");
+    await expect(
+      replaceWorkspace(d, encodeBackup(demoWorkspace()), "demo"),
+    ).rejects.toThrow(/kind mismatch/);
+    await expect(
+      mutateWorkspace(d, (w) => {
+        w.kind = "demo";
+      }),
+    ).rejects.toThrow(/workspace kind/);
+    expect(await readWorkspace(d, "real")).toEqual(before);
+  });
   it("round-trips the entire workspace and preserves a recoverable previous copy", async () => {
     const d = db();
     const initial = await readWorkspace(d, "real");
@@ -319,6 +345,27 @@ describe("transactional storage and backups", () => {
   });
 });
 describe("selected context and narrative", () => {
+  it("dates rollover and schedule history by the decision day, retaining the earlier promise date", () => {
+    const w = fixture();
+    saveCommitment(w, "2026-09-01", "m1", "An earlier promise");
+    decideRollover(
+      w,
+      "2026-10-02",
+      "2026-09-01",
+      "reschedule",
+      "Scope changed",
+      "2026-10-10",
+      "",
+    );
+    w.settings.timezone = "Pacific/Auckland";
+    const s = selectContext(w, ["c1"], "2026-10-01", "2026-10-07");
+    expect(s.commitments).toEqual([]);
+    expect(s.rollovers[0]).toMatchObject({
+      sourceDate: "2026-09-01",
+      date: "2026-10-02",
+    });
+    expect(s.schedule[0].date).toBe("2026-10-02");
+  });
   it("exports only selected campaigns and dates and omits cross-campaign and unscoped notes", () => {
     const w = fixture();
     w.campaigns.push({
