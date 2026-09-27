@@ -9,7 +9,7 @@ A quiet local application and three portable agent skills, built around the same
 | **Hosted preview not yet published.** [Run Momentum locally](#run-locally) · [Try the fictional demo locally](#run-locally) | [Install the three skills](docs/SKILLS.md) · [Read the method](method/METHOD.md) |
 | A visual workspace for campaigns, daily outcomes, proof and weekly decisions. | Use your existing notes or a selected app export. Tested in Codex; Claude Code behavior is unverified. |
 
-**Beta preparation:** The repository starts private. Hosted links and release downloads become available after the required verification gates pass. See [compatibility and validation](docs/COMPATIBILITY.md) for actual results, including any blockers. No external user outcomes or testimonials are claimed.
+**Early preview preparation:** Source and hosting can become public after the privacy review, automated checks and core browser acceptance checks pass. The formal beta release and packaged downloads remain unpublished until the broader beta checks are complete. See [compatibility and validation](docs/COMPATIBILITY.md) for actual results, including any blockers. No external user outcomes or testimonials are claimed.
 
 ## The loop
 

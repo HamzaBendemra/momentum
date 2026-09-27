@@ -1,4 +1,5 @@
 import "fake-indexeddb/auto";
+import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it } from "vitest";
 import {
   activeMilestones,
@@ -264,6 +265,12 @@ describe("transactional storage and backups", () => {
     expect((await d.recovery.toArray())[0].backup.workspace).toEqual(initial);
   });
   it.each([
+    ...["malformed", "unsupported-version", "private-format"].map((name) =>
+      readFileSync(
+        new URL(`../../examples/import-rejections/${name}.json`, import.meta.url),
+        "utf8",
+      ),
+    ),
     "{",
     "{}",
     JSON.stringify({ version: 21, snapshot: { milestones: [] } }),

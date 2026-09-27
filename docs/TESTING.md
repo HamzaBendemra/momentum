@@ -1,5 +1,7 @@
 # Local acceptance checks
 
+The [guided early-preview check](PREVIEW_CHECK.md) is the minimum browser publication gate. The complete matrix below is required before the formal beta release. Unperformed checks remain unverified.
+
 Run `npm ci` from a clean checkout, then `npm run check`. Automated tests use a synthetic IndexedDB implementation (`fake-indexeddb`) to exercise actual Dexie transactions and failure rollback. No credentials are required. Use `npm run build && npm run preview` for browser checks; a development server does not install the production service worker.
 
 Run `npm run skills:build` to package the skills. The build rejects files outside the skill allowlist and checks every ZIP entry against its source, including missing, extra and duplicate entries. CI runs this packaging check after the application checks. Review release media separately; archive validation does not verify screenshots or video.

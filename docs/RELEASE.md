@@ -1,29 +1,34 @@
-# Beta release procedure
+# Early preview and beta release procedure
 
-Version: `0.1.0-beta.1`. The repository remains private while mandatory checks are unresolved. The public core becomes the source of truth; integration into any private predecessor is a separate task.
+Version: `0.1.0-beta.1`. The early preview opens the source and hosted app after privacy, automated quality and core browser checks pass. The formal GitHub beta release stays in draft. The public core becomes the source of truth; integrating changes into the private predecessor is separate work.
 
-**Hosted preview not yet published.** The eventual address is `https://bendemra.ai/momentum/`, inherited from the account's existing GitHub Pages custom domain. The `github.io` address currently redirects through HTTP; use the direct HTTPS address in published links. No DNS, personal-site repository or account-wide domain changes are required by this release plan.
+**Hosted preview not yet published.** The eventual address is `https://bendemra.ai/momentum/`, inherited from the account's existing GitHub Pages custom domain. Link directly to HTTPS. Do not change DNS, the personal-site repository or account-wide domain settings.
 
-## Release gates
+## Early-preview publication gates
 
-- Clean installation, lint, TypeScript, integration tests, build, skill validation and content checks pass.
-- Complete the local browser matrix in TESTING.md, including offline and recovery.
-- Install and evaluate all three skill packages in Codex. Record versions and observed results. Claude Code installation is documented but behavior remains unverified; it is not a beta release gate. Keep ChatGPT/Cowork marked unverified.
-- Review every file in the new history, build output, fictional fixtures, ZIP archives, screenshots and walkthrough for private content and unwanted connections.
-- Keep MIT and third-party notices with the release. Verify the landing page’s two entry points and contribution routes.
-- Record a 75-second fictional walkthrough of campaign → outcome → proof → review, with backup and skill entry points visible. Capture only the app viewport, add captions, and inspect every frame for private material. Attach the MP4 and captions to the release; keep the video outside the offline asset cache.
+- Review all reachable source history and metadata, examples, evaluation results, build assets, skill ZIPs, GitHub issues/discussions, workflow logs/artifacts and draft-release contents. Resolve private-content findings before publication. Keep original MIT and all required dependency notices, including transitive dependencies.
+- From a clean checkout, pass installation, lint, TypeScript, tests, production build, skill validation/packaging and release-content checks. Verify draft archive checksums against the reviewed local assets.
+- Complete all eight rows of [the guided browser check](PREVIEW_CHECK.md) using fictional data. Maintainer-reported results are acceptable and must be labelled as such. Unresolved core-flow, persistence, recovery, isolation or misleading-success failures block publication.
+- Align README, app/skills pages, security guidance and compatibility claims to **early preview**. Keep installation instructions usable from repository folders while release downloads remain unpublished.
+- Record the reviewed commit and results in [READINESS.md](READINESS.md). A changed application requires rerunning affected browser checks and the automated suite. Changed skills/method require relevant host evaluations; unchanged skills retain the existing Codex evidence.
 
-## Publication
+## Publish the early preview
 
-1. Confirm the repository is `HamzaBendemra/momentum` and the release commit passed all gates. The private predecessor repository is never changed.
-2. Point the draft release at the final tested commit, then make this repository public. Enable private vulnerability reporting and keep Discussions enabled. Publish the draft as prerelease `v0.1.0-beta.1` with the three individual skill ZIPs, combined ZIP, SHA256SUMS, walkthrough and captions.
-3. Enable Pages with Actions as its source and set repository variable `ENABLE_PAGES=true`. Dispatch the quality workflow. The deploy job depends on the check job and uses the `github-pages` environment. Preserve the `/momentum/` asset base, hash navigation and service-worker scope.
-4. Verify HTTPS returns 200 for `https://bendemra.ai/momentum/` and the required assets. Locally verify Focus at `#/focus`, the fictional demo at `#/demo/focus`, route refresh and offline operation. Confirm cache cleanup stays limited to the `momentum-public:/momentum/:` prefix. Check the skills instructions and release downloads. Browser checks remain local-only.
-5. Only after deployment and live checks pass, replace the README's local-run entry points with verified HTTPS links to the landing page, Focus and fictional demo, and remove its unpublished-preview notice. Until then, keep the local-run links and accurately report any verification blocker.
-6. Review the launch drafts. Posting to Reddit/X and sending tester invitations are separate actions, not part of repository publication.
+1. Push the reviewed candidate to `HamzaBendemra/momentum` main and require successful CI. MyVault remains private and unchanged.
+2. Make Momentum public and enable private vulnerability reporting. Keep Discussions and the six starter issues available. Retain `v0.1.0-beta.1` as a draft release; do not create a public release tag or advertise its downloads yet.
+3. Enable Pages with GitHub Actions as its source, set `ENABLE_PAGES=true`, then dispatch the quality workflow. Deployment continues to depend on quality checks. Preserve the `/momentum/` asset base, hash routes and service-worker scope; cleanup must stay within `momentum-public:/momentum/:` caches.
+4. Verify HTTPS returns 200 for the landing page and required assets, then complete the hosted smoke check in PREVIEW_CHECK.md. Confirm the deployed commit/version, landing, Focus, fictional demo, skills links and hash-route refresh. Browser checks remain local-only.
+5. Only after hosting passes, replace the README's unpublished-hosting notice and local entry points with verified HTTPS landing/app/demo links. Keep the early-preview and unverified-capability disclosures. If deployment fails, retain local-run instructions and fix the deployment before advertising availability.
 
-## Learn from a small beta
+## Later formal beta gates
 
-Seek roughly five willing testers: people doing goal-driven work and people using agents. Invite them only with explicit authorization. Ask them to complete the loop with an invented project first, recover a backup, and try one skill. Capture time-to-understanding, confusion, evidence fidelity and one desired improvement. Do not collect personal workspace contents.
+- Complete the full TESTING.md browser matrix, including desktop/phone, keyboard, failure states, date transitions, installation, offline use and cache isolation. Do not claim untested platforms.
+- Produce and inspect the 75-second fictional walkthrough, captions and screenshots. Keep the video outside the offline asset cache.
+- Recheck final history, build, archives and media. Point the draft release at the final tested commit; publish the prerelease with skill ZIPs, checksums, walkthrough and captions only after these gates pass.
+- Codex skills are tested. Claude Code, ChatGPT and Cowork remain unverified and do not block release. External feedback is a learning target, never invented evidence.
 
-An invitation or a successful demo is not a testimonial. Keep feedback observations separate from release claims. Respond to concrete feedback, record accepted fixes in Issues, and discuss broader ideas in Discussions.
+## Feedback and promotion
+
+Seek roughly five willing testers after separate invitation authorization. Ask them to try an invented project, backup recovery and a skill; record confusion and failures without collecting personal workspaces. Use Discussions for questions and Issues for accepted work. No testimonials or usage results are implied.
+
+The launch kit contains drafts only. Posting to Reddit/X and sending invitations are separate from repository publication. No automatic messages or scheduled outreach are included.

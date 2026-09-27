@@ -26,6 +26,13 @@ function Landing({ skills = false }: { skills?: boolean }) {
           <a href={github}>GitHub ↗</a>
         </div>
       </nav>
+      <p className="notice">
+        <strong>Early preview</strong> · Browser coverage is still limited.
+        Keep backups and see the{" "}
+        <a href={`${github}/blob/main/docs/COMPATIBILITY.md`}>
+          verification record
+        </a>.
+      </p>
       {!skills && (
         <>
           <header className="landing-hero">
@@ -169,15 +176,15 @@ function Landing({ skills = false }: { skills?: boolean }) {
           </a>
           <a
             className="button"
-            href={`${github}/releases/tag/v${__APP_VERSION__}`}
+            href={`${github}/tree/main/skills`}
           >
-            Download skill packages
+            Browse skill folders
           </a>
         </div>
         <p className="subtle">
-          See the compatibility record for tested hosts and versions. Portable
-          Markdown for ChatGPT and Cowork is provided as an unverified
-          integration.
+          Tested in Codex CLI 0.149.0. Claude Code, ChatGPT and Cowork remain
+          unverified. Install from the repository folders; packaged beta
+          downloads are not published yet.
         </p>
       </section>
       <section className="card contribute">
@@ -202,7 +209,7 @@ function Landing({ skills = false }: { skills?: boolean }) {
         </div>
       </section>
       <footer>
-        <span>Momentum {__APP_VERSION__} · MIT · English first</span>
+        <span>Momentum {__APP_VERSION__} · Early preview · MIT · English first</span>
         <span>Local data · No account · No telemetry</span>
         <a href={`${github}/blob/main/docs/PRIVACY.md`}>Privacy & recovery</a>
       </footer>
@@ -349,7 +356,7 @@ function WorkspaceApp({
           <small>
             {offlineReady ? "Offline ready" : "Browser storage · local only"}
           </small>
-          <small>{__APP_VERSION__}</small>
+          <small>Early preview · {__APP_VERSION__}</small>
         </div>
       </aside>
       <main id="main" className="app-stage" tabIndex={-1}>

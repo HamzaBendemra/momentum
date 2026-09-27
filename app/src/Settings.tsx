@@ -260,9 +260,10 @@ export default function Settings({
       <section className="card">
         <h2>Browser storage & offline use</h2>
         <p>
-          After the initial offline cache finishes, the app can reopen without a
-          connection. Install it from your browser’s install menu or Add to Home
-          Screen. Installation does not replace backups.
+          The app prepares an offline cache after the first load. Offline use
+          and installation are still awaiting full browser verification in this
+          early preview. Keep complete backups; installation does not replace
+          them.
         </p>
         <button
           onClick={async () => {
