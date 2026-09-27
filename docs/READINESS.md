@@ -1,6 +1,6 @@
 # Early-preview readiness
 
-**Publication blocked: core browser acceptance results are pending.** Repository visibility and Pages must not change until the preview gates below pass. The formal beta release stays draft even after the preview is public.
+**Core preview gates passed; publication awaiting successful CI on the recorded candidate.** Eight core browser checks passed according to the maintainer; the separate hosted smoke check remains pending. The formal beta release stays draft even after the preview is public.
 
 ## Candidate
 
@@ -19,8 +19,8 @@ Review date: 27 September 2026. The original full audit below applies to `c05cea
 | MIT and dependency notices | Passed after correction | Retained the exact license texts for all seven production packages and verified notices/LICENSE are copied into the build |
 | Clean-clone automated suite and packaging | Passed | Node 22.22.2; npm ci, npm run check, npm run skills:build and release:check; 26 tests pass, including all three on-disk rejection files. npm reported zero known vulnerabilities |
 | Draft asset hashes | Passed | All four ZIPs match the source allowlist; five uploaded asset hashes match the reviewed local files. Draft notes match the checked-in text |
-| Original candidate GitHub CI | Passed for c05ceaf; navy candidate pending CI | [Run 36300574763](https://github.com/HamzaBendemra/momentum/actions/runs/36300574763); quality passed, deployment skipped |
-| Core Chrome acceptance | NOT RUN | All eight rows in PREVIEW_CHECK.md are pending; maintainer-reported results accepted |
+| Navy candidate GitHub CI | Passed | [Run 36304213179](https://github.com/HamzaBendemra/momentum/actions/runs/36304213179) at cc40852; quality passed, deployment skipped |
+| Core Chrome acceptance | 8/8 PASS — maintainer-reported | Navy build and fresh disposable Chrome profile confirmed; environment and provenance recorded in PREVIEW_CHECK.md. Not agent-observed |
 | Publication / hosted smoke check | NOT RUN | Repository private, ENABLE_PAGES=false; no live-site claim |
 
 ## Audit scope and findings
@@ -42,8 +42,12 @@ These checks reduce publication risk; finite scans and manual review are not a g
 - Calculated contrast: white on navy 11.25:1; white on hover 14.23:1; slate text on pale blue 5.46:1; ink on pale blue 12.62:1; focus blue on pale blue 4.90:1. Functional control borders use a darker slate than decorative borders and reach 3.34:1 against pale blue. These are palette calculations, not a browser accessibility audit.
 - Source and built CSS/HTML/manifest/SVG inspected for previous purple literals: none remain. Both PNGs were regenerated from the unchanged SVG geometry; the 512-pixel icon was visually inspected. Generated metadata was stripped; only IHDR, IDAT and IEND chunks remain.
 - New production cache: `momentum-public:/momentum/:2167653d73362e0b`; 10 assets. The existing build generator and `/momentum/` scope/cleanup rules are unchanged.
-- Visual browser checks of all surfaces, hover/focus and narrow layouts remain blocked by the saved browser permission restriction. All eight core acceptance checks remain NOT RUN. Do not treat this palette change or the automated suite as satisfying those checks.
+- Agent visual browser checks remain blocked by the saved permission restriction. The maintainer subsequently reported all eight core checks passed and confirmed the navy build in a fresh disposable Chrome profile. This does not claim that the full accessibility, narrow-layout or offline matrix passed.
 - The repository remains private, Pages disabled, and the existing beta release draft. The earlier audit and draft asset hashes remain historical evidence; recheck the complete publication candidate before changing visibility.
+
+## Publication recheck
+
+On 27 September 2026, a fresh clone of cc40852 passed npm ci, npm run check (26 tests), skill packaging and release-content validation; the tree stayed clean and npm reported zero known vulnerabilities. The generated cache matches the navy build above. All eight reachable commits / 111 historical blobs passed the content scanner; incremental source and icon changes were reviewed. Both subsequent workflow logs were scanned without findings. Six issue bodies remain synthetic with no comments; there are no PRs, Discussions or Actions artifacts. All five existing draft asset hashes still match GitHub digests. The original dependency notices, method, skill sources and evaluation records are unchanged.
 
 ## Draft asset SHA-256 record
 
@@ -59,7 +63,7 @@ dbe53357ce4561c248e7790ee6cb53d6451f00a747a8e2c941388ea0abb51357  momentum-choos
 
 ## Browser result record
 
-Provenance: not yet reported. Browser version, OS, test date, tested commit and per-row results are required. Agent browser access previously encountered a saved permission block; native browser availability does not establish application behaviour. Do not record a pass from automated model/storage tests or from preparing this checklist.
+Provenance: maintainer-reported on 27 September 2026, eight passes and no failures reported. The maintainer confirmed the navy build and fresh disposable Chrome profile. Chrome 154.0.8037.57 and macOS 27.0 (26A428) were inspected on this machine; exact test timestamp and hash were not independently supplied. The applicable application commit is 37e7417, with documentation-only checkout cc40852. See PREVIEW_CHECK.md for the full record. Agent browser access remains blocked; no agent-observed interactive pass is claimed.
 
 ## Later beta work
 
