@@ -14,12 +14,12 @@ This draft packages a local React application and three self-contained agent ski
 
 ## Validation and remaining gates
 
-Local automated checks and the initial GitHub workflow pass. All three skill packages were installed and evaluated in Codex CLI 0.149.0. Claude Code 2.1.226 evaluation is blocked by an expired login. Local browser verification and the walkthrough recording are pending browser access. See [the compatibility record](https://github.com/HamzaBendemra/momentum/blob/main/docs/COMPATIBILITY.md) for exact results and limitations.
+Local automated checks and GitHub CI pass. All three skill packages were installed and evaluated in Codex CLI 0.149.0. Claude Code behavior remains unverified and is not a beta release requirement. Local browser verification and the walkthrough recording are pending removal of a saved browser permission block on the local preview. See [the compatibility record](https://github.com/HamzaBendemra/momentum/blob/main/docs/COMPATIBILITY.md) for exact results and limitations.
 
 No public app URL, cross-browser compatibility, external feedback or testimonials are claimed by this draft. Pages stays disabled and the repository stays private until the mandatory gates are complete.
 
 ## Downloads
 
-Use the combined `momentum-skills.zip` or an individual skill ZIP. Unzip and copy each skill folder intact to your project’s `.agents/skills` for Codex or `.claude/skills` for Claude Code. The latter installation instructions are prepared; behaviour verification is still pending. `SHA256SUMS` provides archive checksums. ChatGPT and Cowork use portable Markdown materials and remain unverified integrations.
+Use the combined `momentum-skills.zip` or an individual skill ZIP. Unzip and copy each skill folder intact to your project’s `.agents/skills` for Codex or `.claude/skills` for Claude Code. The latter installation instructions are provided without a verified-behavior claim. `SHA256SUMS` provides archive checksums. ChatGPT and Cowork use portable Markdown materials and remain unverified integrations.
 
 Application data remains in the browser. Export full backups for recovery or transfer; selected Markdown context is not a restorable backup. Private predecessor backups are unsupported. Original code, method, docs and skills are MIT licensed; third-party notices are retained.

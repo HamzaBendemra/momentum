@@ -6,15 +6,15 @@ Version: `0.1.0-beta.1`. The repository remains private while mandatory checks a
 
 - Clean installation, lint, TypeScript, integration tests, build, skill validation and content checks pass.
 - Complete the local browser matrix in TESTING.md, including offline and recovery.
-- Install and evaluate all three skill packages in Codex and Claude Code. Record versions and observed results. Keep ChatGPT/Cowork marked unverified.
+- Install and evaluate all three skill packages in Codex. Record versions and observed results. Claude Code installation is documented but behavior remains unverified; it is not a beta release gate. Keep ChatGPT/Cowork marked unverified.
 - Review every file in the new history, build output, fictional fixtures, ZIP archives, screenshots and walkthrough for private content and unwanted connections.
 - Keep MIT and third-party notices with the release. Verify the landing page’s two entry points and contribution routes.
-- Record a 75-second fictional walkthrough of campaign → outcome → proof → review, with backup and skill entry points visible.
+- Record a 75-second fictional walkthrough of campaign → outcome → proof → review, with backup and skill entry points visible. Capture only the app viewport, add captions, and inspect every frame for private material. Attach the MP4 and captions to the release; keep the video outside the offline asset cache.
 
 ## Publication
 
 1. Confirm the repository is `HamzaBendemra/momentum` and the release commit passed all gates. The private predecessor repository is never changed.
-2. Make this repository public. Enable private vulnerability reporting and Discussions. Create a prerelease tagged `v0.1.0-beta.1` with the three individual skill ZIPs, combined ZIP, SHA256SUMS and walkthrough.
+2. Point the draft release at the final tested commit, then make this repository public. Enable private vulnerability reporting and keep Discussions enabled. Publish the draft as prerelease `v0.1.0-beta.1` with the three individual skill ZIPs, combined ZIP, SHA256SUMS, walkthrough and captions.
 3. Enable Pages with Actions as its source and set repository variable `ENABLE_PAGES=true`. Dispatch the quality workflow. The deploy job depends on the check job and uses the `github-pages` environment.
 4. Verify the landing, app, demo, skills instructions and downloads at the live URLs. Recheck a route refresh and offline cache.
 5. Review the launch drafts. Posting to Reddit/X and sending tester invitations are separate actions, not part of repository publication.

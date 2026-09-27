@@ -7,7 +7,7 @@ A quiet local application and three portable agent skills, built around the same
 | Try the app | Use the skills |
 | --- | --- |
 | [Open Momentum](https://hamzabendemra.github.io/momentum/#/focus) · [Explore the fictional demo](https://hamzabendemra.github.io/momentum/#/demo/focus) | [Install the three skills](docs/SKILLS.md) · [Read the method](method/METHOD.md) |
-| A visual workspace for campaigns, daily outcomes, proof and weekly decisions. | Use your existing notes or a selected app export in Codex or Claude Code. |
+| A visual workspace for campaigns, daily outcomes, proof and weekly decisions. | Use your existing notes or a selected app export. Tested in Codex; Claude Code behavior is unverified. |
 
 **Beta preparation:** The repository starts private. Hosted links and release downloads become available after the required verification gates pass. See [compatibility and validation](docs/COMPATIBILITY.md) for actual results, including any blockers. No external user outcomes or testimonials are claimed.
 

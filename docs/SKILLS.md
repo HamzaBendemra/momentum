@@ -2,6 +2,8 @@
 
 The app is optional. Start from your notes, either [fictional example](../examples/field-guide.md), or Settings & Data → Preview selected context → Download selected context.
 
+**Compatibility:** All three skills were installed and behavior-tested in Codex CLI 0.149.0. Claude Code installation instructions are provided below, but behavior has not been verified there. Claude verification is not a beta release requirement. ChatGPT and Cowork remain unverified portable-Markdown integrations.
+
 | Folder | Input | Output |
 | --- | --- | --- |
 | `momentum-choose-outcome` | Goals, milestones and constraints | One feasible proposal, optional proof, explicit trade-offs |
@@ -21,7 +23,7 @@ cp -R skills/momentum-* /path/to/your-project/.agents/skills/
 
 Start Codex in that target project and ask: `Use $momentum-choose-outcome with the notes in plan.md.` For the other two, use `$momentum-review-week` or `$momentum-build-narrative`. Follow your host’s current [skill instructions](https://developers.openai.com/codex/skills/) if its discovery locations change.
 
-## Install in Claude Code
+## Claude Code installation — behavior unverified
 
 Copy the same folders into the target project’s `.claude/skills/`:
 

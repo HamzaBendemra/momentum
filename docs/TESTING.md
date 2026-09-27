@@ -2,6 +2,8 @@
 
 Run `npm ci` from a clean checkout, then `npm run check`. Automated tests use a synthetic IndexedDB implementation (`fake-indexeddb`) to exercise actual Dexie transactions and failure rollback. No credentials are required. Use `npm run build && npm run preview` for browser checks; a development server does not install the production service worker.
 
+Run `npm run skills:build` to package the skills. The build rejects files outside the skill allowlist and checks every ZIP entry against its source, including missing, extra and duplicate entries. CI runs this packaging check after the application checks. Review release media separately; archive validation does not verify screenshots or video.
+
 Browser verification stays local, never in Actions or the deployment pipeline. Use fictional data in a disposable browser origin. Record browser version, viewport, build revision and results in COMPATIBILITY.md.
 
 1. Start an empty real workspace. Create campaign → dated milestone → Now → daily outcome → evidence → weekly review. Reload and confirm definitions and records remain.
